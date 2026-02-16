@@ -59,7 +59,7 @@ def main():
     # Ask the user for sample input    
     num1 = request_real_number("Enter the first number: ")
     num2 = request_real_number("Enter the second number: ")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    operation = real_operation("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
@@ -69,10 +69,11 @@ def main():
     """
 
 
+
     if operation in ("add", "subtract", "multiply", "divide"):
-      print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+          print(f"The result of {operation}ing {num1} and {num2} is: {result}")
     else:
-     print("this is not an operation, provide an operation")
+          print("this is not an operation, provide an operation")
 
 
 
