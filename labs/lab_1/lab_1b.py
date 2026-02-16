@@ -1,4 +1,5 @@
 
+
 """
 lab_1b.py
 
@@ -38,12 +39,12 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     
 def real_operation(prompt: str):
     while True:
+        try:
             operation = input(prompt).strip().lower()
             if operation in ("add", "subtract", "multiply", "divide"):
                 return operation
-            else:
-                print("this is not an operation, please provide an operation")
-            
+        except:
+            print("this is not an operation, please provide an operation")
                           
 def request_real_number(prompt: str) -> float:
     while True:
@@ -67,10 +68,13 @@ def main():
     """
     this checks if the operation is one of the four intended ones
     """
+
+
     if operation in ("add", "subtract", "multiply", "divide"):
-        print(f"The result of {operation}ing {num1} and {num2} is: {result}")
-    else: 
+         print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    else:
          print("this is not an operation, provide an operation")
+
 
 
 if __name__ == "__main__":
