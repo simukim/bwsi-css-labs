@@ -35,8 +35,16 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
             return num1 / num2
         else:
             raise ValueError("Cannot divide by zero.")
-    else:
-        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+    
+def real_operation(prompt: str):
+    while True:
+            operation = input(prompt).strip().lower()
+            if operation in ("add", "subtract", "multiply", "divide"):
+                return operation
+            else:
+                print("this is not an operation, please provide an operation")
+            
+                          
 def request_real_number(prompt: str) -> float:
     while True:
         try:
@@ -55,7 +63,10 @@ def main():
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
-    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    if operation in ("add", "subtract", "multiply", "divide"):
+        print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    else: 
+         print("this is not an operation, please provide an operation")
 
 
 if __name__ == "__main__":
