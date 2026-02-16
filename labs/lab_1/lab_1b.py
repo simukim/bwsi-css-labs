@@ -1,3 +1,5 @@
+
+
 """
 lab_1b.py
 
@@ -34,22 +36,48 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
             return num1 / num2
         else:
             raise ValueError("Cannot divide by zero.")
-    else:
-        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
-
+    
+def real_operation(prompt: str):
+    while True:
+            operation = input(prompt).strip().lower()
+            if operation in ("add", "subtract", "multiply", "divide"):
+                return operation
+            else:
+                print("this is not an operation, provide an operation")
+                          
+def request_real_number(prompt: str) -> float:
+    while True:
+        try:
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("this is not a number, please type a real number")
 def main():
     
     print(f"===== Simple Calculator =====")
 
     # Ask the user for sample input    
-    num1 = float(input("Enter the first number: "))
-    num2 = float(input("Enter the second number: "))
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    num1 = request_real_number("Enter the first number: ")
+    num2 = request_real_number("Enter the second number: ")
+    operation = real_operation("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
-    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
 
+    """
+    this checks if the operation is one of the four intended ones
+    """
+
+
+
+    if operation in ("add", "subtract", "multiply", "divide"):
+          print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    else:
+          print("this is not an operation, provide an operation")
+
+"""
+seems like its not showing a merge thing
+"""
 
 if __name__ == "__main__":
     main()
