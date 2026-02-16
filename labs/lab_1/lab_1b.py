@@ -69,10 +69,10 @@ def main():
     """
 
 
-if operation in ("add", "subtract", "multiply", "divide"):
-        print(f"The result of {operation}ing {num1} and {num2} is: {result}")
-else:
-    print("this is not an operation, provide an operation")
+    if operation in ("add", "subtract", "multiply", "divide"):
+      print(f"The result of {operation}ing {num1} and {num2} is: {result}")
+    else:
+     print("this is not an operation, provide an operation")
 
 
 
