@@ -63,10 +63,14 @@ def main():
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
+
+    """
+    this checks if the operation is one of the four intended ones
+    """
     if operation in ("add", "subtract", "multiply", "divide"):
         print(f"The result of {operation}ing {num1} and {num2} is: {result}")
     else: 
-         print("this is not an operation, please provide an operation")
+         print("this is not an operation, provide an operation")
 
 
 if __name__ == "__main__":
