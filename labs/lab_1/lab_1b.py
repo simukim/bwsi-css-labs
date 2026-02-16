@@ -39,12 +39,11 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
     
 def real_operation(prompt: str):
     while True:
-        try:
             operation = input(prompt).strip().lower()
             if operation in ("add", "subtract", "multiply", "divide"):
                 return operation
-        except:
-            print("this is not an operation, provide an operation")
+            else:
+                print("this is not an operation, provide an operation")
                           
 def request_real_number(prompt: str) -> float:
     while True:
