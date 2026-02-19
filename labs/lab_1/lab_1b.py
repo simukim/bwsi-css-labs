@@ -36,6 +36,8 @@ def simple_calculator(operation: str, num1: float, num2: float) -> float:
             return num1 / num2
         else:
             raise ValueError("Cannot divide by zero.")
+    else:
+        raise ValueError("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
     
 def real_operation(prompt: str):
     while True:
@@ -43,7 +45,7 @@ def real_operation(prompt: str):
             if operation in ("add", "subtract", "multiply", "divide"):
                 return operation
             else:
-                print("this is not an operation, provide an operation")
+                print("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
                           
 def request_real_number(prompt: str) -> float:
     while True:
@@ -63,19 +65,14 @@ def main():
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
+    print(f"The result of {operation}ing {num1} and {num2} is: {result}")
 
     """
     this checks if the operation is one of the four intended ones
     """
 
 
-
-    if operation in ("add", "subtract", "multiply", "divide"):
-          print(f"The result of {operation}ing {num1} and {num2} is: {result}")
-    else:
-          print("this is not an operation, provide an operation")
-
-"""
+""""
 seems like its not showing a merge thing
 """
 
